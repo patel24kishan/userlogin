@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import firebaseDB from "./firebase-config";
 import { doc, updateDoc,getDoc,setDoc  } from "firebase/firestore";
 import{ userSignOut } from "./firebase-config";
+import "./userProfile.css";
 
  
 const LoggedIn = ({ emailValue }) =>{
@@ -122,13 +123,15 @@ const LoggedIn = ({ emailValue }) =>{
             <h4>----------------------------------------- </h4>
                 <h3>Transaction Amount</h3>
                 <input onChange={(e)=>SetTransactionAmount(e.target.value)} placeholder="Your Answer" style={{width: "150px",height:"35px",fontSize:"20px"}} />
-                <button onClick={() => { makeTransaction(); updateboxBalance() }} > Make Transaction</button>
+                <button  className="button" onClick={() => { makeTransaction(); updateboxBalance() }} > Make Transaction</button>
             <h4>----------------------------------------- </h4>
             </nav>
             <br /><br />
-                 <button > Virtual Assistant</button>
+                 <button className="button" > Virtual Assistant</button>
                 <br /> <br />
-                <button onClick={()=> window.open("https://datastudio.google.com/embed/reporting/5192856f-9ac3-4fd3-826f-892c98f95409/page/03GhC", "_blank")} > Visualize transaction</button>
+                <button className="button" > Chat with other users</button>
+                <br /> <br />
+                <button className="button" onClick={()=> window.open("https://datastudio.google.com/embed/reporting/5192856f-9ac3-4fd3-826f-892c98f95409/page/03GhC", "_blank")} > Visualize transaction</button>
                 <br /> <br /> <br />
                 <button onClick={() => { handleSignout();updateUserStatus() }}> LogOut</button>
 
